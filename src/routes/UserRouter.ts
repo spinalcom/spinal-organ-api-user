@@ -40,25 +40,29 @@ const option = {
 /* GET home page. */
 userRouter.post('/login', async (req, res) => {
 
-
   try {
     console.log(req.body);
     const user = await SpinalServiceUser
       .getUser(option, req.body.email, req.body.password);
 
     const js = {};
+
     if (user.hasOwnProperty('name')) {
       js['name'] = user['name'].get();
     }
+
     if (user.hasOwnProperty('firstname')) {
       js['firstname'] = user['firstname'].get();
     }
+
     if (user.hasOwnProperty('email')) {
       js['email'] = user['email'].get();
     }
+
     if (user.hasOwnProperty('name')) {
       js['password'] = user['password'].get();
     }
+
     js['id'] = user['id'].get();
     return res.json(js);
   } catch (e) {
