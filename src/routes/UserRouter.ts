@@ -41,7 +41,6 @@ const option = {
 userRouter.post('/login', async (req, res) => {
 
   try {
-    console.log(req.body);
     const user = await SpinalServiceUser
       .getUser(option, req.body.email, req.body.password);
 
