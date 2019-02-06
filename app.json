@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "spinal-express-server-user-3333",
+      "script": "npm",
+      "args": "start"
+    }
+  ]
+}
